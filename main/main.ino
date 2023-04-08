@@ -16,12 +16,13 @@ void setup()
     SPI.begin();        // Init SPI bus
     mfrc522.PCD_Init(); // Init MFRC522 card
 
-    Serial.println("Welcome!");
-    Serial.println("LABEL,Date,Time,RFID UID");
+    Serial.println("------------------------------");
+    Serial.println("[*] Welcome!");
+    // Serial.println("LABEL,Date,Time,RFID UID");
     delay(1000);
 
     Serial.println("Scan your card...");
-    Serial.println("");
+    Serial.println("------------------------------");
 }
 // --------------------------------------------------------------------
 void loop()
@@ -45,7 +46,7 @@ int getid()
         return 0;
     }
 
-    Serial.println("THE UID OF THE SCANNED CARD IS:");
+    Serial.print("> ");
 
     for (int i = 0; i < 4; i++)
     {
